@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define maxsize 5
+#define maxsize 3
 
 struct queue
 {
