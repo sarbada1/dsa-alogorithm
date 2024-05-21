@@ -21,6 +21,8 @@ struct Node
 
 struct Node *head = NULL;
 
+
+
 // Function to create a new node
 struct Node *createNode(int data)
 {
@@ -35,6 +37,58 @@ struct Node *createNode(int data)
     return newNode;
 }
 
+
+int main()
+{
+    int choice;
+    while (1)
+    {
+        printf("\nSingly Linear Linked List Operations:\n");
+        printf("1. Create\n");
+        printf("2. Display\n");
+        printf("3. Insert at Beginning\n");
+        printf("4. Insert at End\n");
+        printf("5. Insert at Position\n");
+        printf("6. Delete from Beginning\n");
+        printf("7. Delete from End\n");
+        printf("8. Delete from Position\n");
+        printf("9. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            create();
+            break;
+        case 2:
+            display();
+            break;
+        case 3:
+            insert_begin();
+            break;
+        case 4:
+            insert_last();
+            break;
+        case 5:
+            insert_pos();
+            break;
+        case 6:
+            delete_begin();
+            break;
+        case 7:
+            delete_last();
+            break;
+        case 8:
+            delete_pos();
+            break;
+        case 9:
+            exit(0);
+        default:
+            printf("Invalid choice\n");
+        }
+    }
+    return 0;
+}
 // Function to create a singly linear linked list
 void create()
 {
@@ -61,7 +115,6 @@ void create()
     } while (choice != 0);
 }
 
-// Function to display the linked list
 void display()
 {
     struct Node *temp = head;
@@ -154,7 +207,6 @@ void insert_pos()
     printf("Node inserted at position %d successfully\n", pos);
 }
 
-// Function to delete the first node from the linked list
 void delete_begin()
 {
     if (head == NULL)
@@ -168,7 +220,6 @@ void delete_begin()
     printf("Node deleted from the beginning successfully\n");
 }
 
-// Function to delete the last node from the linked list
 void delete_last()
 {
     if (head == NULL)
@@ -228,54 +279,3 @@ void delete_pos()
     printf("Node deleted from position %d successfully\n", pos);
 }
 
-int main()
-{
-    int choice;
-    while (1)
-    {
-        printf("\nSingly Linear Linked List Operations:\n");
-        printf("1. Create\n");
-        printf("2. Display\n");
-        printf("3. Insert at Beginning\n");
-        printf("4. Insert at End\n");
-        printf("5. Insert at Position\n");
-        printf("6. Delete from Beginning\n");
-        printf("7. Delete from End\n");
-        printf("8. Delete from Position\n");
-        printf("9. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-            create();
-            break;
-        case 2:
-            display();
-            break;
-        case 3:
-            insert_begin();
-            break;
-        case 4:
-            insert_last();
-            break;
-        case 5:
-            insert_pos();
-            break;
-        case 6:
-            delete_begin();
-            break;
-        case 7:
-            delete_last();
-            break;
-        case 8:
-            delete_pos();
-            break;
-        case 9:
-            exit(0);
-        default:
-            printf("Invalid choice\n");
-        }
-    }
-    return 0;
-}
